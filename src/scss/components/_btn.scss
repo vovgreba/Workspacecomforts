@@ -1,0 +1,126 @@
+/* stylelint-disable declaration-no-important */
+@use '../utils/functions/' as *;
+@use '../utils/mixins' as *;
+
+*[class].btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: calc(var(--radius-main) - 4px);
+  padding: 10px 16px;
+  width: 100%;
+  font-weight: var(--fw-400);
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  color: inherit;
+  background-color: inherit;
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.2s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-brown-medium);
+    color: var(--color-brown-dark);
+  }
+
+  &--reverse {
+    border-color: var(--color-blue-400);
+    color: var(--color-white);
+    background-color: var(--color-blue-400);
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-blue-400);
+      color: var(--color-brown-dark) !important;
+      background-color: var(--color-white);
+    }
+  }
+
+  &--user {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: var(--user);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      translate: 0 -50%;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      filter: invert(1);
+    }
+  }
+
+  @include media(mobile-s) {
+    margin: 0 auto;
+    padding-left: 40px !important;
+    width: max-content;
+    min-width: auto;
+  }
+}
+
+button.formsapp-popup-button {
+  margin: 0 !important;
+  padding: 18px 23px !important;
+}
+
+*[class].request-btn {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-weight: var(--fw-400);
+  font-size: 14px;
+  color: var(--color-white);
+  background-color: var(--color-brown-medium);
+  &::after {
+    content: '';
+    position: relative;
+    right: 0;
+    width: 10px;
+    height: 18px;
+    background-image: var(--arrow);
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition-property: filter;
+    transition-duration: 0.2s;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    filter: invert(0);
+  }
+}
+
+.arrow.btn {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 24px;
+
+  &::after {
+    content: '';
+    position: relative;
+    right: 0;
+    width: 15.58px;
+    height: 15px;
+    background-image: var(--arrow);
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition-property: filter;
+    transition-duration: 0.2s;
+  }
+}

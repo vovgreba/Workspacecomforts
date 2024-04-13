@@ -1,0 +1,39 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.team {
+  overflow: hidden;
+  padding: rem(66) 0 34px;
+  background-color: var(--color-white);
+
+  &__slide {
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: var(--radius-main);
+    padding: rem(34);
+    height: initial;
+    font-family: var(--font-family-secondary);
+    color: var(--color-white);
+    background-color: var(--color-blue-400);
+
+    h3 {
+      margin: 0 auto 16px;
+      font-weight: var(--fw-400);
+      text-align: center;
+      color: inherit;
+    }
+
+    span {
+      display: block;
+      margin: 0 auto 18px;
+      font-weight: var(--fw-700);
+      font-size: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-weight: var(--fw-700);
+      line-height: 1.6;
+    }
+  }
+}

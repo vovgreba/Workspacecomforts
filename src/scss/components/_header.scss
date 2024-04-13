@@ -1,0 +1,61 @@
+@use '../utils/functions/' as *;
+@use '../utils/mixins/' as *;
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  margin: 0 auto;
+  padding: 17px 0;
+  width: 100%;
+  min-height: var(--header-height);
+  background: var(--color-white);
+  transition-property: transform, padding;
+  transition-duration: 0.15s;
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.4s;
+    &:hover,
+    &:focus {
+      color: var(--color-brown-dark);
+    }
+  }
+  button.formsapp-popup-button,
+  .btn {
+    padding: 10px 16px;
+    color: var(--color-brown-medium);
+    border-radius: var(--radius-btn);
+    font-size: 14px;
+    &::after {
+      display: none;
+    }
+
+    @include media(tablet-wide) {
+      padding: 18px 10px !important;
+    }
+  }
+
+  .btn--user {
+    &::before {
+      display: none !important;
+    }
+  }
+
+  &.hide {
+    transform: translateY(calc(-100% - 30px));
+  }
+  &--scroll {
+    background-color: #fff;
+    padding-bottom: 10px;
+    .logo {
+      &:hover,
+      &:focus {
+        color: var(--color-brown-dark);
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.culture {
+  padding: rem(66) 0;
+  color: var(--color-white);
+
+  h2 {
+    margin-bottom: 18px;
+
+    +p {
+      margin-bottom: rem(32);
+      max-width: 660px;
+    }
+  }
+
+  h3 {
+    line-height: 1.2;
+  }
+
+  .grid {
+    &__item {
+      padding-right: 40px;
+    }
+
+    p {
+      color: var(--color-dark-400);
+    }
+  }
+
+  &--philosophy {
+    padding: 0 0 rem(78);
+  }
+}

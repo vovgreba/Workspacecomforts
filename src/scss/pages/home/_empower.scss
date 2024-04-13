@@ -1,0 +1,51 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+
+.empower {
+  padding: 119px 0 99px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .box-inner {
+    margin-bottom: 36px;
+    .description {
+      max-width: 570px;
+      width: 100%;
+      font-size: 18px;
+    }
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 1.26;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+    max-width: 497px;
+    width: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 261px);
+    gap: 28px 45px;
+  }
+
+  &__item {
+    h5 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.26;
+      margin-bottom: 12px;
+      color: var(--color-brown-dark);
+    }
+  }
+
+  @include media(mobile-l) {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+}

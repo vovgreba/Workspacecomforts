@@ -1,0 +1,65 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.workspace {
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 118px 0 102px;
+
+  }
+  .line {
+    max-width: 108px;
+    height: 8px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color-white-200);
+    margin-top: 80px;
+    margin-bottom: 45px;
+  }
+
+  .title {
+    color: var(--color-brown-medium);
+  }
+
+  &__content {
+    max-width: 488px;
+    width: 100%;
+
+    &--reverce {
+
+      .line {
+        margin-left: auto;
+        margin-right: 0;
+      }
+      .title {
+        width: 100%;
+        text-align: end;
+      }
+    }
+  }
+
+  &__picture {
+    max-width: 488px;
+    width: 100%;
+    img {
+      margin-bottom: 36px;
+    }
+  }
+
+  p {
+    color: var(--color-brown-dark);
+    font-size: 18px;
+  }
+
+
+  @include media(tablet) {
+
+  }
+
+  @include media(tablet) {
+
+  }
+}

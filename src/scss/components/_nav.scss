@@ -1,0 +1,137 @@
+@use '../utils/functions/' as *;
+@use '../utils/mixins/' as *;
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .header & {
+      @include media(tablet) {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding-top: calc(var(--header-height) * 1.5);
+        width: 100%;
+        height: calc(var(--vh));
+        background-color: var(--color-white);
+        transform: translateX(150%);
+        transition-property: transform;
+        transition-duration: 0.4s;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    .header & {
+      @include media(desktop) {
+        margin-right: 10px;
+      }
+
+      @include media(tablet) {
+        z-index: -1;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__item {
+    .header & {
+      @include media(tablet) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: var( --color-brown-medium);
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: color 0.4s, border 0.4s;
+    &:hover,
+    &:focus {
+      color: var(--color-brown-dark);
+      border: 1px solid var(--color-brown-light);
+    }
+    &.true {
+      border-bottom: 1px solid var(--color-brown-light);
+    }
+  }
+
+  &__btns {
+    display: flex;
+
+    .btn--user {
+      white-space: nowrap;
+      max-width: 84px;
+      margin-right: 8px;
+      background-color: #fff;
+      color: var(--color-brown-medium);
+    }
+    .request-btn {
+      white-space: nowrap;
+      max-width: 129px;
+      color: #fff;
+      background-color: var(--color-brown-medium);
+    }
+    @include media(tablet) {
+      margin: 0 auto;
+    }
+
+    @include media(mobile-s) {
+      flex-direction: column;
+    }
+  }
+
+  @include media(tablet) {
+    .nav {
+      &__list {
+        margin: 0 auto;
+      }
+
+      &__item {
+        margin-right: 0;
+      }
+    }
+
+    &--footer {
+      flex-direction: column;
+
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      .nav {
+        &__list {
+          margin-bottom: 20px;
+
+          @include media(mobile-m) {
+            flex-direction: column;
+          }
+        }
+
+        &__inner {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.footer {
+  background-color: var(--color-white-200);
+
+  &__top, &__bottom {
+    padding: 55px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__bottom {
+    padding: 25px 15px;
+  }
+
+  button.formsapp-popup-button,
+  .btn {
+    padding: 10px 16px;
+    border-radius: var(--radius-btn);
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: nowrap;
+    &::after {
+      display: none;
+    }
+    &::before {
+      display: none;
+    }
+
+    @include media(tablet-wide) {
+      padding: 18px 10px !important;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 15px;
+    .btn--user {
+      background-color: var(--color-brown-light);
+      color: var(--color-brown-dark);
+    }
+  }
+
+  &__contacts {
+    a {
+      color: var(--color-brown-dark);
+      font-size: 16px;
+    }
+  }
+
+  .logo {
+    display: block;
+    margin-top: 24px;
+    transition: color 0.4s;
+    &:hover,
+    &:focus {
+      color: var(--color-brown-dark);
+    }
+  }
+  hr {
+    border: 1px solid rgb(196, 176, 168);
+  }
+  .copyright {
+    text-align: center;
+    font-size: 16px;
+    margin-left: -8px;
+    line-height: 1.26px;
+    color: var(--color-brown-dark);
+  }
+
+  .nav {
+    margin-right: -8px;
+    color: var(--color-brown-medium);
+    line-height: 1.26px;
+  }
+}

@@ -1,0 +1,44 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.news {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-main);
+  height: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.623) 33.13%, rgba(102, 102, 102, 0.231) 61.36%);
+  }
+
+  h3 {
+    position: absolute;
+    bottom: 35px;
+    padding: 0 rem(45) 0 40px;
+    line-height: 1.5;
+    color: var(--color-white);
+  }
+
+  img {
+    height: 100%;
+  }
+
+  a {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  @include media(mobile-l) {
+    h3 {
+      padding: 0 15px;
+      font-size: 27px;
+      line-height: 1.2;
+    }
+  }
+}

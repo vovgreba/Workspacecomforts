@@ -1,0 +1,64 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+.customized, .benefits {
+  padding: 77px 0 77px;
+  background-color: #fff;
+
+  .box-inner {
+    margin-bottom: 59px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 1.26;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 266px);
+    gap: 39px;
+    margin-bottom: 59px;
+  }
+
+  &__item {
+    h5 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.26;
+      margin-bottom: 12px;
+      color: var(--color-brown-dark);
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 33px;
+    background-color: var(--color-white-200);
+    border-radius: var(--radius-main);
+    padding: 16px;
+  }
+  .btn {
+    max-width: 167px;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    padding: 16px 36px 15px;
+    white-space: nowrap;
+    &::after {
+      display: none;
+    }
+  }
+  @include media(mobile-l) {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+
+}
