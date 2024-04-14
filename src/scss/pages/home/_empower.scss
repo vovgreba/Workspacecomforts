@@ -43,9 +43,20 @@
     }
   }
 
-  @include media(mobile-l) {
+  @include media(tablet) {
+    padding: 40px 0;
     &__inner {
-      grid-template-columns: 1fr;
+     flex-direction: column;
+     gap: 40px;
+    }
+    &__images {
+      img {
+        margin: 0 auto;
+      }
+    }
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
+
 }

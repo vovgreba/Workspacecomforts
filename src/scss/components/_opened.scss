@@ -5,6 +5,7 @@
 .opened {
   .nav__inner {
     transform: translateX(0);
+    gap: 40px;
   }
 
   span {
@@ -26,4 +27,5 @@
       animation-name: bottomlinecross;
     }
   }
+
 }

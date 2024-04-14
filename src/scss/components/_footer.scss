@@ -76,4 +76,42 @@
     color: var(--color-brown-medium);
     line-height: 1.26px;
   }
+
+  @include media(mobile-l) {
+    &__bottom {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  @include media(mobile-m) {
+    &__buttons {
+      margin-right: 0;
+    }
+
+    &__contacts {
+      text-align: center;
+    }
+    .copyright {
+      margin-left: 0;
+    }
+    .nav {
+      margin-right: 0;
+    }
+
+    &__top {
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+  }
+  @include media(mobile-s) {
+    .copyright {
+      font-size: 14px;
+    }
+  }
+  @include media(mobile-sm) {
+    .copyright {
+      font-size: 12px;
+    }
+  }
 }

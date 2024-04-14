@@ -18,7 +18,8 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 266px);
+    // grid-template-columns: repeat(4, 266px);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 39px;
     margin-bottom: 59px;
   }
@@ -55,9 +56,37 @@
       display: none;
     }
   }
+  
   @include media(mobile-l) {
     &__inner {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @include media(tablet) {
+    &__grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include media(mobile-m) {
+    .btn {
+      max-width: unset;
+    }
+  }
+
+  @include media(mobile-s) {
+    &__grid {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    &__content, &__content {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .btn {
+      max-width: unset;
     }
   }
 

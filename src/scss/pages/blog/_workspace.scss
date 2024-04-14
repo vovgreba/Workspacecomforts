@@ -56,10 +56,42 @@
 
 
   @include media(tablet) {
-
+    &__inner {
+      padding: 60px 0 60px;
+    }
   }
 
-  @include media(tablet) {
-
+  @include media(mobile-m) {
+    .order {
+      order: unset;
+    }
+    &__content--reverce {
+      .title {
+        text-align: start;
+      }
+      .line {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    &__inner {
+      flex-direction: column;
+      padding-top: 20px;
+    }
+    .line {
+      margin-top: 40px;
+    }
+    &__picture {
+      display: flex;
+      flex-direction: column;
+      p {
+        order: 0;
+        margin-bottom: 36px;
+      }
+      img {
+        order: 1;
+        margin-bottom: 0;
+      }
+    }
   }
 }

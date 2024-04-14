@@ -52,7 +52,7 @@
   &__item {
     .header & {
       @include media(tablet) {
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
       }
     }
   }
@@ -114,13 +114,8 @@
     &--footer {
       flex-direction: column;
 
-      .logo {
-        margin-bottom: 20px;
-      }
-
       .nav {
         &__list {
-          margin-bottom: 20px;
 
           @include media(mobile-m) {
             flex-direction: column;

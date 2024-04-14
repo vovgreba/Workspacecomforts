@@ -58,4 +58,8 @@
       }
     }
   }
+
+  @include media(tablet) {
+    min-height: unset;
+  }
 }

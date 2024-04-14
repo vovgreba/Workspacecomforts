@@ -1,3 +1,7 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+
 .clients {
   padding: 86px 0 86px;
 
@@ -57,4 +61,21 @@
     margin-bottom: 24px;
   }
 
+  @include media(tablet) {
+    padding: 60px 0;
+    &__items {
+      flex-direction: column;
+    }
+    &__item {
+      max-width: unset;
+    }
+  }
+
+  @include media(mobile-s) {
+    &__item {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

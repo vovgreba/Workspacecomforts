@@ -1,3 +1,7 @@
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
+
+
 .projects {
   padding: 108px 0;
   &__title {
@@ -44,5 +48,81 @@
   }
   .images--bottom {
     margin-bottom: 20px;
+  }
+
+  @include media(desktop) {
+    &__inner {
+      flex-direction: column;
+    }
+    img {
+      width: 100%;
+    }
+    &__item-flex {
+      flex-direction: column;
+      &:last-child {
+        margin-bottom: 20px;
+      }
+      img {
+        width: unset;
+      }
+    }
+
+    .images--bottom {
+      margin-bottom: 0;
+    }
+
+    &__item {
+      img {
+        &:first-child {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &__box-images {
+      display: flex;
+      gap: 20px;
+      margin-right: 0;
+      padding: 20px 0;
+      img {
+        width: 100%;
+        &:first-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+  }
+
+
+}
+
+@media screen and (max-width: 650px) {
+  .projects__item-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .projects__box-images {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+
+  }
+}
+
+@include media(mobile-m) {
+  .projects {
+    padding: 40px 0;
+  }
+  .projects__item-flex {
+    flex-direction: column;
+  }
+  .projects__title {
+    flex-direction: column;
+    gap: 20px;
+    .btn {
+      max-width: unset;
+    }
   }
 }

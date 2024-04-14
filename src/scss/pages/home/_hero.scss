@@ -101,15 +101,25 @@
   }
 
   @include media(mobile-l) {
-    min-height: 300px;
-    padding-top: 0;
+    min-height: 600px;
+    // padding-top: 0;
 
     &__content {
       padding: 20px;
+      h1 {
+        font-size: 34px;
+      }
     }
 
     &__inner {
-      min-height: 300px;
+      min-height: 600px;
     }
   }
+  @include media(mobile-s) {
+    &__content .btn {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
 }

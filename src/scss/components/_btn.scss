@@ -65,8 +65,6 @@
 
   @include media(mobile-s) {
     margin: 0 auto;
-    padding-left: 40px !important;
-    width: max-content;
     min-width: auto;
   }
 }

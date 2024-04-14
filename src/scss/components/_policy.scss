@@ -33,9 +33,16 @@
     margin-right: 5px;
   }
 
-  @include media(mobile-l) {
-    padding: 40px 0;
+  @include media(tablet) {
+    padding: 60px 0;
+  }
 
+  @include media(mobile-m) {
+    h1 {
+      font-size: 44px;
+    }
+  }
+  @include media(mobile-l) {
     h1 {
       margin-bottom: 30px;
       text-align: center;
