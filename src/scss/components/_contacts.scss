@@ -14,7 +14,7 @@
     width: 100%;
   }
 
-  h3 {
+  h2 {
     margin-bottom: 32px;
   }
 
@@ -22,7 +22,7 @@
     display: block;
     margin-bottom: 16px;
     &:last-of-type {
-      margin-bottom: 32px;
+      margin-bottom: 26px;
     }
   }
 
@@ -51,16 +51,24 @@
     padding-inline: 16px !important;
     font-size: 18px;
     background-color: var(--color-brown-medium);
+    line-height: 1.5;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
     color: var(--color-brown-dark);
     font-size: 16px;
+
+    &-wrap {
+      padding: 16px 0;
+      margin-left: -10px;
+    }
+    a {
+      text-decoration: underline;
+    }
   }
 
 

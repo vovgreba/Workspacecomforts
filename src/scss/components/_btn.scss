@@ -3,6 +3,7 @@
 @use '../utils/mixins' as *;
 
 *[class].btn {
+  font-family: var(--font-family-primary);
   position: relative;
   display: flex;
   align-items: center;
@@ -13,7 +14,7 @@
   width: 100%;
   font-weight: var(--fw-400);
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.5;
   text-align: center;
   color: inherit;
   background-color: inherit;
@@ -69,10 +70,7 @@
   }
 }
 
-button.formsapp-popup-button {
-  margin: 0 !important;
-  padding: 18px 23px !important;
-}
+
 
 *[class].request-btn {
   position: relative;

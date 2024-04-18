@@ -4,23 +4,29 @@
 .footer {
   background-color: var(--color-white-200);
 
-  &__top, &__bottom {
+  &__top, &__inner {
     padding: 55px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__bottom {
-    padding: 25px 15px;
+
+  &__inner {
+    padding: 0;
   }
 
-  button.formsapp-popup-button,
+  &__bottom {
+    border-top: 1px solid rgb(196, 176, 168);
+    padding: 25px 0;
+  }
+
   .btn {
     padding: 10px 16px;
     border-radius: var(--radius-btn);
     font-size: 14px;
     line-height: 1.5;
     white-space: nowrap;
+    margin: 0;
     &::after {
       display: none;
     }
@@ -28,10 +34,8 @@
       display: none;
     }
 
-    @include media(tablet-wide) {
-      padding: 18px 10px !important;
-    }
   }
+
 
   &__buttons {
     display: flex;
@@ -47,27 +51,31 @@
   &__contacts {
     a {
       color: var(--color-brown-dark);
-      font-size: 16px;
+      font-size: 20px;
+      line-height: 1.26;
     }
   }
 
   .logo {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
     display: block;
     margin-top: 24px;
     transition: color 0.4s;
+    color: var(--color-brown-medium);
     &:hover,
     &:focus {
       color: var(--color-brown-dark);
     }
   }
-  hr {
-    border: 1px solid rgb(196, 176, 168);
-  }
+
+
   .copyright {
     text-align: center;
     font-size: 16px;
     margin-left: -8px;
-    line-height: 1.26px;
+    line-height: 1.25px;
     color: var(--color-brown-dark);
   }
 
@@ -78,9 +86,12 @@
   }
 
   @include media(mobile-l) {
-    &__bottom {
+    &__top, &__inner {
       flex-direction: column;
       gap: 40px;
+    }
+    .logo {
+      margin: 24px auto 0;
     }
   }
   @include media(mobile-m) {
@@ -98,11 +109,7 @@
       margin-right: 0;
     }
 
-    &__top {
-      flex-direction: column;
-      gap: 40px;
-      align-items: center;
-    }
+
   }
   @include media(mobile-s) {
     .copyright {

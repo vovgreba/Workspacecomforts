@@ -27,9 +27,8 @@
     max-width: 667px;
     padding: 48px 0 48px 48px;
     border-radius: var(--radius-main);
-
     h1 {
-      margin-bottom: 54px;
+      margin-bottom: 52px;
       max-width: 571px;
       line-height: 1.2;
       letter-spacing: 0px;
@@ -54,6 +53,7 @@
       font-size: 18px;
       line-height: 1.5;
       white-space: nowrap;
+      margin: 0;
       &::after {
         display: none;
       }
@@ -102,7 +102,6 @@
 
   @include media(mobile-l) {
     min-height: 600px;
-    // padding-top: 0;
 
     &__content {
       padding: 20px;

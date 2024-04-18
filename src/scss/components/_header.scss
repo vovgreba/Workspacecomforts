@@ -10,10 +10,11 @@
   margin: 0 auto;
   padding: 17px 0;
   width: 100%;
-  min-height: var(--header-height);
   background: var(--color-white);
+  min-height: var(--header-height);
   transition-property: transform, padding;
   transition-duration: 0.15s;
+
   .logo {
     display: flex;
     align-items: center;
@@ -24,18 +25,18 @@
       color: var(--color-brown-dark);
     }
   }
-  button.formsapp-popup-button,
-  .btn {
-    padding: 10px 16px;
-    color: var(--color-brown-medium);
-    border-radius: var(--radius-btn);
-    font-size: 14px;
-    &::after {
-      display: none;
-    }
 
-    @include media(tablet-wide) {
-      padding: 18px 10px !important;
+  .nav__btns {
+    .btn {
+      padding: 9px 16px;
+      color: var(--color-brown-medium);
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      margin: 0;
+      margin-right: 12px;
+      &::after {
+        display: none;
+      }
     }
   }
 

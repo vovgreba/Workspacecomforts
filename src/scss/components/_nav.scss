@@ -11,7 +11,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 
     .header & {
       @include media(tablet) {
@@ -29,6 +28,15 @@
         transform: translateX(150%);
         transition-property: transform;
         transition-duration: 0.4s;
+      }
+    }
+    .nav__btns {
+      display: none;
+      .btn--user {
+        margin: 0 auto 10px;
+      }
+      @include media(tablet) {
+        display: block;
       }
     }
   }
@@ -52,7 +60,6 @@
   &__item {
     .header & {
       @include media(tablet) {
-        // margin-bottom: 30px;
       }
     }
   }
@@ -92,6 +99,7 @@
       background-color: var(--color-brown-medium);
     }
     @include media(tablet) {
+      display: none;
       margin: 0 auto;
     }
 

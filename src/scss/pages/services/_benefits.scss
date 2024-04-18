@@ -1,57 +1,24 @@
-@use "../../utils/functions/"as*;
-@use "../../utils/mixins/"as*;
+@use '../../utils/functions/' as *;
+@use '../../utils/mixins/' as *;
 
+.benefits {
+  padding: 77px 0;
+  background-color: #fff;
 
-.empower {
-  padding: 119px 0 99px;
-
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-  }
   .title-inner {
-    margin-bottom: 36px;
-
-    .title {
-      max-width: 497px;
-      margin-bottom: 16px;
-    }
-
-    p {
-      max-width: 572px;
-      width: 100%;
-      font-size: 18px;
-    }
+    margin-bottom: 95px;
   }
 
-  .title {
-    font-size: 32px;
-    line-height: 1.26;
-    margin-bottom: 12px;
-    letter-spacing: 0;
-    max-width: 497px;
-    width: 100%;
-  }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 261px);
-    gap: 28px 45px;
-  }
 
   &__item {
     h3 {
       font-size: 18px;
-      font-weight: 700;
-      line-height: 1.26;
-      margin-top: 66px;
+      margin-top: 89px;
       margin-bottom: 12px;
       color: var(--color-brown-dark);
     }
-
     &::before {
-      width: 44px;
-      height: 44px;
       background-repeat: no-repeat;
       background-size: 24px 24px;
       background-position: center;
@@ -78,22 +45,20 @@
     }
   }
 
-  @include media(tablet) {
-    padding: 40px 0;
+
+  @include media(mobile-l) {
     &__inner {
-     flex-direction: column;
-     gap: 40px;
-    }
-    &__images {
-      img {
-        margin: 0 auto;
-      }
-    }
-    &__grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
     }
   }
-  
+
+  @include media(tablet) {
+    &__grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
   @include media(mobile-s) {
     &__grid {
       display: flex;
@@ -101,4 +66,5 @@
       text-align: center;
     }
   }
+
 }

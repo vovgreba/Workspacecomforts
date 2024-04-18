@@ -1,28 +1,36 @@
 @use "../../utils/functions/"as*;
 @use "../../utils/mixins/"as*;
 
-
 .services {
-  min-height: 554px;
   &__title {
     padding: 106px 0;
+    .title {
+      max-width: 809px;
+      font-size: 64px;
+      line-height: 1.2;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
   &__inner {
     position: relative;
-    min-height: 554px;
+    min-height: unset;
   }
-  &__content--reverse {
-    margin-left: auto;
-    margin-right: 0;
+  &__images{
+    padding: 0;
+    translate: 13.5%;
+    img {
+      width: 720px;
+    }
+  }
+  &__inner--reverse {
+    grid-template-columns: 1fr 500px;
   }
 
   &__images--reverse {
-    min-width: 720px;
-    max-width: 100%;
-    height: 554px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    max-width: 720px;
+    width: 100%;
+    translate: -14%;
   }
 
   .btn {
@@ -31,6 +39,7 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 1.5;
+    color: var(--color-brown-medium) !important;
     &::after {
       display: unset;
       background-image: url(../images/Vector.svg);
@@ -43,32 +52,66 @@
     gap: 12px;
   }
 
-  @include media(desktop) {
-    min-height: auto;
+  @include media(desktop-l) {
 
-    &__inner {
-      min-height: auto;
-    }
-
-    &__wrapp, &__wrapp--reverse {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+    &__images{
+      translate: 11.5%;
+      img {
+        width: 100%;
+        max-width: 700px;
+      }
     }
 
     &__images--reverse {
-      position: relative;
-      max-width: 620px;
-      height: auto;
-      min-width: unset;
+      max-width: 720px;
+      width: 100%;
+      translate: -11.5%;
     }
   }
-  @include media(desktop) {
-    &__wrapp, &__wrapp--reverse {
+  @include media(desktop-wide) {
+
+    &__inner, &__inner--reverse {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+    }
+
+    &__images {
+      translate: 0;
+    }
+    &__images--reverse {
+      translate: 0;
+    }
+  }
+
+
+  @include media(tablet) {
+    &__inner, &__inner--reverse {
+      gap: 20px;
+    }
+    &__inner {
       margin-bottom: 20px;
     }
+
+    &__images {
+      max-width: unset;
+      img {
+        max-width: unset;
+      }
+    }
+
+    .btn {
+      max-width: unset;
+    }
+    
+    &__images--reverse  {
+      order: 1;
+    }
    }
+
+
+
   @include media(mobile-l) {
     &__title {
       padding: 60px 0;
@@ -84,16 +127,6 @@
       .title {
         font-size: 34px;
       }
-    }
-
-    .btn {
-      max-width: unset;
-    }
-    &__wrapp, &__wrapp--reverse {
-      flex-direction: column;
-    }
-    &__images--reverse  {
-      order: 1;
     }
    }
 

@@ -7,15 +7,21 @@
 
   &__content {
     margin-bottom: 48px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   h1 {
-    margin-bottom: 48px;
+    font-size: 64px;
+    line-height: 1.2;
+    margin: 0 auto 48px;
+    color: var(--color-brown-medium);
   }
 
   h2 {
     margin-bottom: 24px;
-    font-size: 30px;
+    font-size: 32px;
   }
 
   p {
@@ -23,14 +29,26 @@
     font-size: 18px;
     letter-spacing: 0;
     text-align: left;
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-
-
-  b,
-  strong {
+  a {
+    text-decoration: underline;
     font-weight: var(--fw-700);
-    margin-right: 5px;
+  }
+  ul {
+    margin: 24px 0;
+  }
+
+  li {
+    margin-bottom: 5px;
+    color: var(--color-brown-dark);
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @include media(tablet) {
